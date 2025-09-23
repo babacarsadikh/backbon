@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - /bin/rm -rf /home/c2559919c/public_html/api/*
+    - /bin/cp -R . /home/c2559919c/public_html/api/
+    - cd /home/c2559919c/public_html/api
+    - /usr/local/bin/php /home/c2559919c/composer.phar install --no-dev --optimize-autoloader
