@@ -1,19 +1,32 @@
-Options All -Indexes
+Options -Indexes
+Options -MultiViews
+Options +FollowSymLinks
 
-<Files .htaccess>
-order allow,deny
-deny from all
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
 </Files>
 
 <IfModule mod_rewrite.c>
-  # Redirect to the public folder
-  RewriteEngine On
-  # RewriteBase /
-  RewriteRule ^$ public/ [L]
-  RewriteRule (.*) public/$1 [L]
-
-  # Redirect to HTTPS
-  # RewriteEngine On
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteEngine On
+    
+    # Redirection vers le dossier public/
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
 </IfModule>
+
+# Sécurité - Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<Files "composer.*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "README.md">
+    Order allow,deny
+    Deny from all
+</Files>
