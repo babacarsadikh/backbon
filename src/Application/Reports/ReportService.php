@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Application\Reports;
 
 use DateTimeImmutable;
+use DateTimeZone;
 use PDO;
 
 final class ReportService
@@ -13,9 +14,10 @@ final class ReportService
 
     public function build(array $filters): array
     {
-        $start = new DateTimeImmutable((string)($filters['date_debut'] ?? 'today'));
+        $timezone = new DateTimeZone('Africa/Dakar');
+        $start = new DateTimeImmutable((string)($filters['date_debut'] ?? 'today'), $timezone);
         $endInput = (string)($filters['date_fin'] ?? $start->format('Y-m-d'));
-        $end = new DateTimeImmutable($endInput);
+        $end = new DateTimeImmutable($endInput, $timezone);
         $from = $start->setTime(0, 0, 0);
         $to = $end->setTime(23, 59, 59);
 
