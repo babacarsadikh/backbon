@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - /usr/local/bin/php /home/c2559919c/repositories/backbon/bin/deploy-reports.php
-    - cd /home/c2559919c/public_html/api && /usr/local/bin/php /home/c2559919c/composer.phar install --no-dev --optimize-autoloader --no-interaction
     - /usr/local/bin/php /home/c2559919c/public_html/api/bin/migrate-reports.php
+    - cd /home/c2559919c/public_html/api && /usr/local/bin/php /home/c2559919c/composer.phar install --no-dev --optimize-autoloader --no-interaction
