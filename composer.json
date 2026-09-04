@@ -28,7 +28,7 @@
         "firebase/php-jwt": "^6.11",
         "monolog/monolog": "^2.8",
         "php-di/php-di": "^6.4",
-        "phpoffice/phpspreadsheet": "^5.2",
+        "phpoffice/phpspreadsheet": "^2.1",
         "slim/psr7": "^1.5",
         "slim/slim": "^4.10"
     },
@@ -47,7 +47,7 @@
         "process-timeout": 0,
         "sort-packages": true,
         "platform": {
-            "php": "8.4.24"
+            "php": "8.2.0"
         }
     },
     "autoload": {
