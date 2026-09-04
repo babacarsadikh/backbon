@@ -58,6 +58,11 @@ return function (App $app) {
         $livraisonRoutes($group);
     });
 
+    $app->group('/rapports', function (Group $group) {
+        $reportRoutes = require __DIR__ . '/routes/rapportroute.php';
+        $reportRoutes($group);
+    });
+
     // // Routes pour les opérateurs
     // $app->group('/operateurs', function (Group $group) {
     //     // Inclure les routes des opérateurs
