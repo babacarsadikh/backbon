@@ -30,7 +30,7 @@
         "php-di/php-di": "^6.4",
         "phpoffice/phpspreadsheet": "^2.1",
         "slim/psr7": "^1.5",
-        "slim/slim": "^4.10"
+        "slim/slim": "^4.15"
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",
