@@ -25,7 +25,7 @@
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
         "dompdf/dompdf": "^3.1",
-        "firebase/php-jwt": "^6.11",
+        "firebase/php-jwt": "^7.2",
         "monolog/monolog": "^2.8",
         "php-di/php-di": "^6.4",
         "phpoffice/phpspreadsheet": "^2.1",
